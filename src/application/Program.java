@@ -13,13 +13,13 @@ public class Program {
 		p = new Product(); 
 		System.out.print("Enter name of product: ");		
 		p.name = sc.nextLine();
-		System.out.print("Enter price: ");
+		System.out.print("Enter price (USD): ");
 		p.value = sc.nextDouble();
 		System.out.print("Enter quantity: ");
 		p.quantity = sc.nextInt();
 		
-		System.out.println("Produto " + p.name + " criado com sucesso.");
-							
+		System.out.printf("-- Product %s successfully created. --%n", p.name);
+		System.out.printf("Total in stock: %.2f USD%n.", p.getTotal());
 		sc.close();
 	}
 }
