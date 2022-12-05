@@ -12,14 +12,24 @@ public class Program {
 		Product p;
 		p = new Product(); 
 		System.out.print("Enter name of product: ");		
-		p.name = sc.nextLine();
-		System.out.print("Enter price (USD): ");
-		p.value = sc.nextDouble();
-		System.out.print("Enter quantity: ");
-		p.quantity = sc.nextInt();
+		p.setName(sc.nextLine());
 		
-		System.out.printf("-- Product %s successfully created. --%n", p.name);
-		System.out.printf("Total in stock: %.2f USD%n.", p.getTotal());
+		System.out.print("Enter price (USD): ");
+		p.setValue(sc.nextDouble());
+		
+		System.out.print("Enter quantity: ");
+		p.setQuantity(sc.nextInt());
+		
+		System.out.printf(p.getStock());
+		System.out.printf(p.msg());
+		
+		System.out.print("Enter adding quantity: ");
+		int a = sc.nextInt();
+		p.addProduct(a);
+						
+		System.out.printf(p.getStock());
+		System.out.printf(p.msg());
+		
 		sc.close();
 	}
 }
